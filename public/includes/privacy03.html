@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할일태산</title>
+    <script src="/js/jquery-3.7.0.min.js"></script>
+    <script src="/js/common.js"></script>
+    <style>      
+    .page_privacy_content p{
+        white-space: pre-line;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    @media screen and (max-width:1024){
+
+        .pc{
+            display: none;
+        }
+        .mobile{
+            display: block;
+        }
+    }
+    
+        </style>
+</head>
+<body id="page_privacy">
+    <main>
+        <div class="container">
+            <div class="inner">
+                <div class="page_title">
+                    <h2>마케팅 활용정보 동의</h2>
+                </div>
+                <div class="page_privacy_content">
+                    <p>1.목적
+                        (주)할일태산에서 영리를 목적으로 하는 서비스의
+                        홍보(온/오프라인) 활동에 이용됩니다.
+                        
+                        2.항목
+                        의뢰한 서비스의 과정 및 결과물(이미지,영상,음성)이며
+                        보유기간 영업기간 혹은 개별 요구 동의시 철회하며
+                        개인을 특정할수 있는 정보물은 제외합니다.
+                        
+                        마케팅 정보 수신 동의
+                        
+                        1.목적
+                        할일태산이 제공하는 서비스 및 이벤트등의 광고성 정보 제공(이메일, SMS, 카카오톡 등)
+                        
+                        2.항목
+                        성명,이메일주소, 휴대전화번호,사업자인경우 사업장주소
+                        마케팅 수신 동의 여부
+                        보유기간 동의 철회 시, 본 마케팅 정보 수신에 대한 동의를 거부하실 수 있으며,
+                        이 경우 (주)할일태산의 서비스를 이용하실 수 있으나 각종 소식 및 이벤트 참여에 제한이 있을 수 있습니다.</p>
+                        <button class="last-button btn_able grid3" onclick="window.history.back()">뒤로가기</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
