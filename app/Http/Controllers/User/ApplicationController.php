@@ -632,7 +632,7 @@ class ApplicationController extends Controller
       $boyangs = $req->boyang;
       foreach ($boyangs as $boyang) {
         Option::create([
-          'board_id' => $board->wwwww,
+          'board_id' => $board->board_id,
           'contents' => $boyang
         ]);
       }
