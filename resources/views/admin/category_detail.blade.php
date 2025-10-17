@@ -46,6 +46,13 @@
   if ($type === '9') {
     $title = '승강기 보양 + 행위허가';
   }
+  // 2025.10.15 강동위 추가 - 방충망 시공 , 종합청소 서비스 추가 
+  if ($type === '10') {
+    $title = '방충망 시공';
+  }
+  if ($type === '11') {
+    $title = '종합청소';
+  }
 @endphp
 <main class="minWidth2">
   <h2>{{ $title }}</h2>

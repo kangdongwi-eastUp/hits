@@ -62,6 +62,15 @@
                     <p class="row01 {{ $result[5] === 'y' ? 'new' : '' }}">보양탈거</p>
                     <button type="button" onclick="location.href='/adm/boards/5'"><img src="/public/img/admin/category_ico_page.svg" alt="페이지 아이콘"></button>
                 </li>
+                <!-- 2025.10.15 강동위 추가 - 방충망 시공 , 종합청소 서비스 추가 -->
+                <li>
+                    <p class="row01 {{ $result[10] === 'y' ? 'new' : '' }}">방충망시공</p>
+                    <button type="button" onclick="location.href='/adm/boards/10'"><img src="/public/img/admin/category_ico_page.svg" alt="페이지 아이콘"></button>
+                </li>
+                <li>
+                    <p class="row01 {{ $result[11] === 'y' ? 'new' : '' }}">종합청소</p>
+                    <button type="button" onclick="location.href='/adm/boards/11'"><img src="/public/img/admin/category_ico_page.svg" alt="페이지 아이콘"></button>
+                </li>
             </ul>
         </div>
     </main>

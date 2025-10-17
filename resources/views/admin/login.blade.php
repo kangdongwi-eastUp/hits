@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,12 @@
     <!-- js -->
     <script src="/public/js/jquery-3.6.1.min.js"></script>
     <script>
-        window.onload = function(){
+        window.onload = function() {
             $('body').addClass('loaded')
         }
     </script>
 </head>
+
 <body id="page_login"><input type="hidden" id="input_page" value="">
     <header>
         <div class="minWidth">
@@ -34,25 +36,32 @@
         </form>
     </main>
 </body>
+@if (session('msg'))
+<script>
+    alert("{{ session('msg') }}");
+</script>
+@endif
 <script>
     function login() {
         let formData = new FormData(document.getElementById('form'));
 
         $.ajax({
-            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-            url : "/adm/v1/login",
-            method : "POST",
-            data : formData,
-            processData : false,
-            contentType : false,
-            success : function (res) {
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/adm/v1/login",
+            method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(res) {
                 if (res.result === 'success') {
                     location.href = '{{ route('admin.apply') }}'
                 } else {
                     console.error(res);
                 }
             },
-            error:function(request, status, error){
+            error: function(request, status, error) {
                 // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
                 if (request.status === 401) {
                     alert("계정정보를 확인해주세요.");
@@ -64,4 +73,5 @@
         })
     }
 </script>
+
 </html>
