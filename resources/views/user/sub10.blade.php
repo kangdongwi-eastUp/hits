@@ -63,6 +63,18 @@
                 alert("방충망 옵션을 선택해주세요.");
                 return false;
             }
+
+            let cnt = 0;
+            Array.from(document.querySelectorAll('.required')).forEach(chk => {
+                if (chk.checked) {
+                    cnt++;
+                }
+            });
+            if (cnt !== 2) {
+                alert("개인정보 수집 및 이용동의, 개인정보 제3자 제공 동의는 필수입니다.");
+                return false;
+            }
+
             return true;
         }
 
@@ -97,7 +109,7 @@
     </script>
 </head>
 
-<body id="page_sub9"><input type="hidden" id="input_page" value="">
+<body id="page_sub10"><input type="hidden" id="input_page" value="">
     <main>
         <h3>방충망 시공</h3>
         <form id="form" class="bx_form">
@@ -117,36 +129,56 @@
             <h4>신청인명과 연락처를 입력해주세요. <span class="t_red">*</span></h4>
             <div class="wrap_input">
                 <input type="text" id="name" name="name" class="input_name" placeholder="성명">
-                <input type="text" id="phone" name="phone" maxlength="13" oninput="phoneValidation(this)" placeholder="연락처는 숫자만 입력해주세요">
+                <input type="text" id="phone" name="phone" maxlength="13" oninput="phoneValidation(this)" placeholder="연락처는 숫자만 입력해주세요.">
             </div>
 
             <h4>신청인이 업체이시면 업체명을 작성해주세요.</h4>
             <h5>업체 등록 후 멤버쉽 전용 단가로 이용이 가능하게 됩니다. 차후 채팅으로 안내해 드릴게요.</h5>
             <div class="wrap_input">
-                <label class="lb_chk"><input type="checkbox" name="option1" id="" onclick="disabledCompanyName(this)">셀프 직영 공사입니다</label>
+                <label class="lb_chk"><input type="checkbox" name="option1" id="" onclick="disabledCompanyName(this)">셀프 직영 공사입니다.</label>
                 <input type="text" placeholder="업체명을 입력해주세요." name="company_name">
             </div>
 
             <h4>방충망의 "망" 소재를 선택해 주세요.<span class="t_red">*</span></h4>
             <h5>중복 선택이 가능합니다.</h5>
             <div class="bx_chks">
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="섬유미세망" id="">섬유미세망</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="알루미늄망" id="">알루미늄망</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="실버 스텐레스망" id="">실버 스텐레스망</label>
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="블랙 스텐레스망" id="">블랙 스텐레스망</label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="섬유미세망" id="">섬유미세망 ✨<bold style="color:blue;">Premium</bold> </label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="프로젝트롬망" id="">프로젝트롬망</label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="블랙 스텐레스망" id="">블랙 스텐레스망 ✨<bold style="color:blue;">Premium</bold></label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="현관 방충망" id="">현관 방충망</label>
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="현관 방범 방충망" id="">현관 방범 방충망</label>
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="상담후 선택하고 싶어요." id="">상담후 선택하고 싶어요.</label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="현관 방범 방충망" id="">현관 방범 방충망 ✨<bold style="color:blue;">Premium</bold></label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="상담후 선택하고 싶어요." id="">상담 후 선택하고 싶어요.</label>
             </div>
 
             <h4>방충망 옵션을 선택해 주세요.<span class="t_red">*</span></h4>
-            <h5>모헤어교체,틀세척,물구멍망은 무료 옵션입니다</h5>
+            <h5>모헤어 교체, 틀 세척, 물구멍망 은 무료 옵션입니다.</h5>
             <div class="bx_chks">
-                <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="안전잠금장치" id="">안전잠금장치</label>
+                <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="안전잠금장치" id="">안전 잠금장치</label>
                 <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="망틀 교체" id="">망틀 교체</label>
                 <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="망틀 신규 제작" id="">망틀 신규 제작</label>
-                <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="상담후 선택하고 싶어요." id="">상담후 선택하고 싶어요.</label>
+                <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="상담후 선택하고 싶어요." id="">상담 후 선택하고 싶어요.</label>
+            </div>
+            <div id="page_sub1">
+                <label class="lb_chk lb_chkAll">
+                    <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">
+                    모두 선택
+                </label>
+                <ul class="bx_chkPolicy">
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms1" class="terms required" onclick="chkAllState()">개인정보 수집 및 이용동의</label>
+                        <a href="/includes/privacy01.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms2" class="terms required" onclick="chkAllState()">개인정보 제3자 제공 동의</label>
+                        <a href="/includes/privacy02.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms3" class="terms" onclick="chkAllState()">마케팅 활용정보 동의 (선택)</label>
+                        <a href="/includes/privacy03.html">(전체 보기)</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="bx_btnBottom">

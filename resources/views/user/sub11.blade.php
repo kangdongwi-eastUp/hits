@@ -51,6 +51,16 @@
                 alert("청소 공간의 유형을 선택해주세요.");
                 return false;
             }
+            let cnt = 0;
+            Array.from(document.querySelectorAll('.required')).forEach(chk => {
+                if (chk.checked) {
+                    cnt++;
+                }
+            });
+            if (cnt !== 2) {
+                alert("개인정보 수집 및 이용동의, 개인정보 제3자 제공 동의는 필수입니다.");
+                return false;
+            }
 
             return true;
         }
@@ -126,7 +136,26 @@
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="대,중,소형 시설물" id="">대,중,소형 시설물</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="상담후 선택하고 싶어요." id="">상담후 선택하고 싶어요.</label>
             </div>
-
+            <div id="page_sub1">
+                <label class="lb_chk lb_chkAll">
+                    <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">
+                    모두 선택
+                </label>
+                <ul class="bx_chkPolicy">
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms1" class="terms required" onclick="chkAllState()">개인정보 수집 및 이용동의</label>
+                        <a href="/includes/privacy01.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms2" class="terms required" onclick="chkAllState()">개인정보 제3자 제공 동의</label>
+                        <a href="/includes/privacy02.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms3" class="terms" onclick="chkAllState()">마케팅 활용정보 동의 (선택)</label>
+                        <a href="/includes/privacy03.html">(전체 보기)</a>
+                    </li>
+                </ul>
+            </div>
             <div class="bx_btnBottom">
                 <button type="button" class="btn_confirm b_point" onclick="formSubmit()">접수하기</button>
                 <button type="button" class="btn_cancel b_secondary" onclick="location.href='{{ route('user.index') }}'">취소</button>

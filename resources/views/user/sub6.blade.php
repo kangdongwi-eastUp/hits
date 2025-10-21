@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,13 +50,23 @@
                 alert("보양 타입을 선택해주세요.");
                 return false;
             }
+            let cnt = 0;
+            Array.from(document.querySelectorAll('.required')).forEach(chk => {
+                if (chk.checked) {
+                    cnt++;
+                }
+            });
+            if (cnt !== 2) {
+                alert("개인정보 수집 및 이용동의, 개인정보 제3자 제공 동의는 필수입니다.");
+                return false;
+            }
             return true;
         }
 
         function formSubmit() {
             if (validation()) {
                 let formData = new FormData(document.getElementById('form'));
-                formData.append('type','6');
+                formData.append('type', '6');
 
                 $.ajax({
                     headers: {
@@ -64,8 +75,8 @@
                     type: "POST",
                     url: "/v1/application",
                     data: formData,
-                    processData : false,
-                    contentType : false,
+                    processData: false,
+                    contentType: false,
                     success: function(res) {
                         if (res.result === 'success') {
                             location.href = `/application/${res.data.board_id}`;
@@ -73,8 +84,8 @@
                             console.log(res);
                         }
                     },
-                    error:function(request, status, error){
-                        console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    error: function(request, status, error) {
+                        console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
                     }
                 });
 
@@ -82,6 +93,7 @@
         }
     </script>
 </head>
+
 <body id="page_sub6"><input type="hidden" id="input_page" value="">
     <main>
         <h3>입주민 동의서 + 승강기 보양</h3>
@@ -120,7 +132,7 @@
             <h5>공사안내문에 표기되는 사항입니다.</h5>
             <div class="wrap_input">
                 <label class="lb_chk"><input type="checkbox" name="" id="" onclick="getUser(1,this)">위 신청인과 같아요.</label>
-                <input type="text" name="manager_name" id="" class="input_name" placeholder="성명" >
+                <input type="text" name="manager_name" id="" class="input_name" placeholder="성명">
                 <input type="text" name="manager_phone" id="" maxlength="13" oninput="phoneValidation(this)" placeholder="연락처는 숫자만 입력해주세요">
             </div>
 
@@ -146,7 +158,26 @@
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="기타보양(바닥,벽)" id="">기타보양(바닥,벽)</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="관리사무소 규정 확인후 시공해주세요." id="">관리사무소 규정 확인후 시공해주세요.</label>
             </div>
-
+            <div id="page_sub1">
+                <label class="lb_chk lb_chkAll">
+                    <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">
+                    모두 선택
+                </label>
+                <ul class="bx_chkPolicy">
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms1" class="terms required" onclick="chkAllState()">개인정보 수집 및 이용동의</label>
+                        <a href="/includes/privacy01.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms2" class="terms required" onclick="chkAllState()">개인정보 제3자 제공 동의</label>
+                        <a href="/includes/privacy02.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms3" class="terms" onclick="chkAllState()">마케팅 활용정보 동의 (선택)</label>
+                        <a href="/includes/privacy03.html">(전체 보기)</a>
+                    </li>
+                </ul>
+            </div>
             <div class="bx_btnBottom">
                 <button type="button" class="btn_confirm b_point" onclick="formSubmit()">접수하기</button>
                 <button type="button" class="btn_cancel b_secondary" onclick="location.href='{{ route('user.index') }}'">취소</button>
@@ -156,4 +187,5 @@
     <nav class="fnb"></nav>
     <div class="pc bg_body"></div>
 </body>
+
 </html>

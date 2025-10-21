@@ -169,62 +169,7 @@
                     <td>1,320,000원</td>
                     <td>실측+자재+시공</td>
                 </tr>
-                <!-- 2025.10.14 강동위 추가 - 방충망 시공 및 종합청소 서비스 추가 -->
                 <!--
-            <tr>
-                <td rowspan="12">전국</td>
-                <td rowspan="12">방충망시공(유형별)</td>
-                <td rowspan="4">대 1000X2100(mm)</br>거실,발코니</br>(전창)</td>
-                <td>55,000원</td>
-                <td>알루미늄 방충망</td>
-            </tr>
-            <tr>
-                <td>66,000원</td>
-                <td>섬유 미세 방충망</td>
-            </tr>
-            <tr>
-                <td>77,000원</td>
-                <td>스텐레스 방충망</td>
-            </tr>
-            <tr>
-                <td>99,000원</td>
-                <td>블랙 스텐레스 방충망</td>
-            </tr>
-            <tr>
-                <td rowspan="4">중 1000X1500(mm)</br>방</br>(반창)</td>
-                <td>44,000원</td>
-                <td>알루미늄 방충망</td>
-            </tr>
-            <tr>
-                <td>55,000원</td>
-                <td>섬유 미세 방충망</td>
-            </tr>
-            <tr>
-                <td>66,000원</td>
-                <td>스텐레스 방충망</td>
-            </tr>
-            <tr>
-                <td>77,000원</td>
-                <td>블랙 스텐레스 방충망</td>
-            </tr>
-            <tr>
-                <td rowspan="4">소 700X700(mm)</br>욕실,주방</br>(반반창)</td>
-                <td>22,000원</td>
-                <td>알루미늄 방충망</td>
-            </tr>
-            <tr>
-                <td>33,000원</td>
-                <td>섬유 미세 방충망</td>
-            </tr>
-            <tr>
-                <td>33,000원</td>
-                <td>스텐레스 방충망</td>
-            </tr>
-            <tr>
-                <td>55,000원</td>
-                <td>블랙 스텐레스 방충망</td>
-            </tr>
--->
                 <tr>
                     <td rowspan="11">전국</td>
                     <td rowspan="11">종합청소</td>
@@ -281,6 +226,7 @@
                     <td>기타 가중이용시설 청소</td>
                     <td colspan="2">별도문의</td>
                 </tr>
+-->
                 <tr>
                     <td>기타</td>
                     <td>권역외 지역</td>
@@ -290,6 +236,83 @@
                 </tr>
             </tbody>
         </table>
+        <!-- 2025.10.14 강동위 추가 - 방충망 시공 및 종합청소 서비스 추가 -->
+        <h2>종합청소 단가표</h2>
+        <p style="padding: 10px 0; text-align: right;">VAT 포함</p>
+        <table class="tb_main">
+            <colgroup>
+                <col style="width: default;">
+                <col style="width: default;">
+                <col style="width: default;">
+                <col style="width: default;">
+            </colgroup>
+            <thead>
+                <tr style="height:36px;">
+                    <th>구분</th>
+                    <th>서비스 내용</th>
+                    <th>기본단가(m²당 / 건당)</th>
+                    <th>비고</th>
+                </tr>
+                <tr style="height:36px;">
+                    <td rowspan="3">주거공간 청소</td>
+                    <td>일반 입주청소</td>
+                    <td>15,000원</td>
+                    <td>신축/이사청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>공사 후 입주청소</td>
+                    <td>18,000원</td>
+                    <td>준공 후 미청소 상태</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>거주 중 입주청소</td>
+                    <td>18,000원</td>
+                    <td>거주 중 진행</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td rowspan="4">상업•업무공간 청소</td>
+                    <td>사무공간 청소</td>
+                    <td>300,000원~</td>
+                    <td>운영 중 또는 이사청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>외식업 매장 청소</td>
+                    <td>400,000원~</td>
+                    <td>식당•카페 등 운영 중/입정 청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>유통업 매장 청소</td>
+                    <td>600,000원~</td>
+                    <td>대,중,소 마트 등 운영 중/입점 청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>스크린골프장 청소</td>
+                    <td>140,000원~</td>
+                    <td>운영 중/입점 청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td rowspan="3">특수청소</td>
+                    <td>간판•어닝•유리 청소</td>
+                    <td>150,000원~</td>
+                    <td>상업공간 운영중 청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>외벽 청소</td>
+                    <td>1,000,000원~</td>
+                    <td>대,중,소 건축물 외관 청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>에어컨 청소</td>
+                    <td>100,000원~</td>
+                    <td>스탠드•벽걸이•천정형 정밀 청소</td>
+                </tr>
+                <tr style="height:36px;">
+                    <td>기타</td>
+                    <td>다중이용시설 청소</td>
+                    <td colspan="2">별도문의</td>
+                </tr>
+        </table>
+
         <h2>방충망 시공 단가표</h2>
         <p style="padding: 10px 0; text-align: right;">VAT 포함</p>
         <table class="tb_main">
@@ -315,25 +338,25 @@
                     <th>욕실,주방</br>(반반창)</td>
                 </tr>
                 <tr>
-                    <th style="height:36px;">알루미늄 방충망</td>
+                    <th style="height:45px;">알루미늄 방충망</td>
                     <td>55,000원</td>
                     <td>44,000원</td>
                     <td>22,000원</td>
                 </tr>
                 <tr>
-                    <th style="height:36px;">섬유 미세 방충망</td>
+                    <th style="height:45px;">섬유 미세 방충망</br>✨Premium</td>
                     <td>66,000원</td>
                     <td>55,000원</td>
                     <td>33,000원</td>
                 </tr>
                 <tr>
-                    <th style="height:36px;">스텐레스 방충망</td>
+                    <th style="height:45px;">스텐레스 방충망</td>
                     <td>77,000원</td>
                     <td>66,000원</td>
                     <td>33,000원</td>
                 </tr>
                 <tr>
-                    <th style="height:36px;">블랙 스텐레스 방충망</td>
+                    <th style="height:45px;">블랙 스텐레스 방충망</br>✨Premium</td>
                     <td>99,000원</td>
                     <td>77,000원</td>
                     <td>55,000원</td>
@@ -349,15 +372,15 @@
                 <col style="width: default;">
             </colgroup>
             <thead>
-                <tr style="height:36px;">
+                <tr style="height:45px;">
                     <th rowspan="2">평형별</td>
                     <th colspan="4">방충망 소재별</td>
                 </tr>
-                <tr style="height:36px;">
+                <tr style="height:45px;">
                     <th>알루미늄</td>
-                    <th>섬유 미세</td>
+                    <th>섬유 미세</br>✨Premium</th>
                     <th>스텐레스</td>
-                    <th>블랙 스텐레스</td>
+                    <th>블랙 스텐레스<< /br>✨Premium/th>
                 </tr>
                 <tr style="height:36px;">
                     <th>20평형대</th>

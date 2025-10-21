@@ -95,8 +95,7 @@
             url: "/v1/application/{{ $board->board_id }}",
             success: function(res) {
                 if (res.result === 'success') {
-                    location.href = '{{ route('
-                    user.application.complete ') }}';
+                    location.href = '{{ route('user.application.complete') }}';
                 } else {
                     console.log(res);
                 }

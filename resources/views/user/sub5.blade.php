@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,7 @@
     <script src="/public/js/jquery-3.6.1.min.js"></script>
     <script src="/public/js/user.common.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    
+
     <script>
         function validation() {
             if (document.getElementById('address0').value.length === 0 || document.getElementById('address1').value.length === 0) {
@@ -41,13 +42,25 @@
                 alert("보양 타입을 선택해주세요.");
                 return false;
             }
+
+            let cnt = 0;
+            Array.from(document.querySelectorAll('.required')).forEach(chk => {
+                if (chk.checked) {
+                    cnt++;
+                }
+            });
+            if (cnt !== 2) {
+                alert("개인정보 수집 및 이용동의, 개인정보 제3자 제공 동의는 필수입니다.");
+                return false;
+            }
+
             return true;
         }
 
         function formSubmit() {
             if (validation()) {
                 let formData = new FormData(document.getElementById('form'));
-                formData.append('type','5');
+                formData.append('type', '5');
 
                 $.ajax({
                     headers: {
@@ -56,8 +69,8 @@
                     type: "POST",
                     url: "/v1/application",
                     data: formData,
-                    processData : false,
-                    contentType : false,
+                    processData: false,
+                    contentType: false,
                     success: function(res) {
                         if (res.result === 'success') {
                             location.href = `/application/${res.data.board_id}`;
@@ -65,14 +78,15 @@
                             console.log(res);
                         }
                     },
-                    error:function(request, status, error){
-                        console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    error: function(request, status, error) {
+                        console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
                     }
                 });
             }
         }
     </script>
 </head>
+
 <body id="page_sub5"><input type="hidden" id="input_page" value="">
     <main>
         <h3>보양탈거</h3>
@@ -109,6 +123,28 @@
             <h4>*보양탈거는 신청한 날로부터 당일 또는 익일 중 순회하며 탈거가 이루어집니다.</h4>
 
             <i style="height: 16px;"></i>
+
+            <div id="page_sub1">
+                <label class="lb_chk lb_chkAll">
+                    <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">
+                    모두 선택
+                </label>
+                <ul class="bx_chkPolicy">
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms1" class="terms required" onclick="chkAllState()">개인정보 수집 및 이용동의</label>
+                        <a href="/includes/privacy01.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms2" class="terms required" onclick="chkAllState()">개인정보 제3자 제공 동의</label>
+                        <a href="/includes/privacy02.html">(전체 보기)</a>
+                    </li>
+                    <li>
+                        <label class="lb_chk"><input type="checkbox" name="terms3" class="terms" onclick="chkAllState()">마케팅 활용정보 동의 (선택)</label>
+                        <a href="/includes/privacy03.html">(전체 보기)</a>
+                    </li>
+                </ul>
+            </div>
+
             <div class="bx_btnBottom">
                 <button type="button" class="btn_confirm b_point" onclick="formSubmit()">접수하기</button>
                 <button type="button" class="btn_cancel b_secondary" onclick="location.href='{{ route('user.index') }}'">취소</button>
@@ -118,4 +154,5 @@
     <nav class="fnb"></nav>
     <div class="pc bg_body"></div>
 </body>
+
 </html>

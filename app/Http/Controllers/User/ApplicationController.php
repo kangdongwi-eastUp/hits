@@ -573,6 +573,7 @@ class ApplicationController extends Controller
         'terms3' => $terms,
         'type' => 9,
         'option3' => $req->option3,
+
       ]);
 
       $boyangs = $req->boyang;

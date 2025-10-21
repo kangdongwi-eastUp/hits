@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,13 +17,14 @@
     <script src="/public/js/jquery-3.6.1.min.js"></script>
     <script src="/public/js/user.common.js"></script>
     <script>
-        
+
     </script>
 </head>
+
 <body id="page_confirm"><input type="hidden" id="input_page" value="">
     <main>
         <p class="b_point">신청하신 내용이 맞는지 확인해주세요.</p>
-        
+
         <h4>공사 기간을 선택해주세요. <span class="t_red">*</span></h4>
         <h5>{{ date('Y-m-d',strtotime($board->start_date)) }} 부터 {{ date('Y-m-d',strtotime($board->end_date)) }}</h5>
 
@@ -55,19 +57,23 @@
         <h4>현재 주택의 유형을 선택해주세요.</h4>
         <h5>
             @if ($board->option3 === '1')
-                현재 소유 중입니다.
+            현재 소유 중입니다.
             @elseif ($board->option3 === '2')
-                매매 중 잔금 전입니다.
+            매매 중 잔금 전입니다.
             @endif
         </h5>
 
         <h4>허가받을 공사 내용을 간략하게 작성해주세요.</h4>
-        <h5>{!! nl2br($board->contents) !!}</h5>
+        <h5>{!! nl2br($board->contents2) !!}</h5>
 
         <i style="height: 29px;"></i>
 
-        <label class="lb_chk"><input type="checkbox" name="" id="" class="required"><p>현장 주소를 재차 확인하였습니다.<span class="t_red">*</span></p></label>
-        <label class="lb_chk"><input type="checkbox" name="" id="" class="required"><p>접수완료 후에 채팅창에 “신청인명” 또는 “업체명”을 입력해주세요.<span class="t_red">*</span></p></label>
+        <label class="lb_chk"><input type="checkbox" name="" id="" class="required">
+            <p>현장 주소를 재차 확인하였습니다.<span class="t_red">*</span></p>
+        </label>
+        <label class="lb_chk"><input type="checkbox" name="" id="" class="required">
+            <p>접수완료 후에 채팅창에 “신청인명” 또는 “업체명”을 입력해주세요.<span class="t_red">*</span></p>
+        </label>
 
         <i style="height: 18px;"></i>
 
@@ -85,7 +91,7 @@
 
         Array.from(document.querySelectorAll('.required')).forEach(el => {
             if (el.checked) {
-                cnt ++;
+                cnt++;
             }
         });
         if (cnt !== 2) {
@@ -106,10 +112,11 @@
                     console.log(res);
                 }
             },
-            error:function(request, status, error){
-                console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            error: function(request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
             }
         });
     }
 </script>
+
 </html>
