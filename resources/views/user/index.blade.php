@@ -82,6 +82,10 @@
                         $('.btn_submit').attr('data-value', '').removeClass('active');
                     } else {
                         $('.btn_submit').attr('data-value', checkedLength).addClass('active');
+                        // 2025.10.12 강동위 추가 - 서비스 추가로 인한 신청하기 버튼이 잘 안보여서 하단 스크롤 기능 추가
+                        $('html, body').animate({
+                            scrollTop: $(document).height()
+                        }, 300);
                     }
                 }, 0);
             });
@@ -145,6 +149,7 @@
                 종합 청소
                 <input type="checkbox" name="q_second" id="seven-service" value="7" hidden><i></i>
             </label>
+
         </form>
         <button type="button" class="btn_submit b_point" onclick="document.getElementById('form').submit()">신청하기</button>
     </main>
