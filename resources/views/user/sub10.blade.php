@@ -144,11 +144,11 @@
             <div class="bx_chks">
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="알루미늄망" id="">알루미늄망</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="실버 스텐레스망" id="">실버 스텐레스망</label>
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="섬유미세망" id="">섬유미세망 ✨<bold style="color:blue;">Premium</bold> </label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="섬유미세망" id="">섬유미세망</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="프로젝트롬망" id="">프로젝트롬망</label>
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="블랙 스텐레스망" id="">블랙 스텐레스망 ✨<bold style="color:blue;">Premium</bold></label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="블랙 스텐레스망" id="">블랙 스텐레스망</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="현관 방충망" id="">현관 방충망</label>
-                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="현관 방범 방충망" id="">현관 방범 방충망 ✨<bold style="color:blue;">Premium</bold></label>
+                <label class="lb_chk"><input type="checkbox" name="boyang[]" value="현관 방범 방충망" id="">현관 방범 방충망</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="상담후 선택하고 싶어요." id="">상담 후 선택하고 싶어요.</label>
             </div>
 

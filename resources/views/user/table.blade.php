@@ -342,7 +342,7 @@
                     <td>22,000원</td>
                 </tr>
                 <tr>
-                    <th style="height:45px;">섬유 미세 방충망</br>✨Premium</td>
+                    <th style="height:45px;">섬유 미세 방충망</td>
                     <td>66,000원</td>
                     <td>55,000원</td>
                     <td>33,000원</td>
@@ -354,7 +354,7 @@
                     <td>33,000원</td>
                 </tr>
                 <tr>
-                    <th style="height:45px;">블랙 스텐레스 방충망</br>✨Premium</td>
+                    <th style="height:45px;">블랙 스텐레스 방충망</td>
                     <td>99,000원</td>
                     <td>77,000원</td>
                     <td>55,000원</td>
@@ -376,9 +376,9 @@
                 </tr>
                 <tr style="height:45px;">
                     <th>알루미늄</td>
-                    <th>섬유 미세</br>✨Premium</th>
+                    <th>섬유 미세</th>
                     <th>스텐레스</td>
-                    <th>블랙 스텐레스<< /br>✨Premium/th>
+                    <th>블랙 스텐레스</th>
                 </tr>
                 <tr style="height:36px;">
                     <th>20평형대</th>
