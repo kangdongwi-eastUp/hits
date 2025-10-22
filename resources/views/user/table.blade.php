@@ -235,7 +235,7 @@
             </tbody>
         </table>
         <!-- 2025.10.14 강동위 추가 - 방충망 시공 및 종합청소 서비스 추가 -->
-        <h2>종합청소 단가표</h2>
+        <!-- <h2>종합청소 단가표</h2>
         <p style="padding: 10px 0; text-align: right;">VAT 포함</p>
         <table class="tb_main">
             <colgroup>
@@ -309,7 +309,7 @@
                     <td>다중이용시설 청소</td>
                     <td colspan="2">별도문의</td>
                 </tr>
-        </table>
+        </table> -->
 
         <h2>방충망 시공 단가표</h2>
         <p style="padding: 10px 0; text-align: right;">VAT 포함</p>
