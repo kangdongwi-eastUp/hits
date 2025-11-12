@@ -160,6 +160,16 @@
                 <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="망틀 신규 제작" id="">망틀 신규 제작</label>
                 <label class="lb_chk"><input type="checkbox" name="mang_option[]" value="상담후 선택하고 싶어요." id="">상담 후 선택하고 싶어요.</label>
             </div>
+            <h4>다른 서비스도 이용할 예정이신가요?</h4>
+            <div class="bx_chks">
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="입주민 동의서" id="">입주민 동의서</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="승강기 보양" id="">승강기 보양</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="행위허가" id="">행위허가</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="보양탈거" id="">보양탈거</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="사용검사" id="">사용검사</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="종합청소" id="">종합청소</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="폐기물 수거" id="">폐기물 수거</label>
+            </div>
             <div id="page_sub1">
                 <label class="lb_chk lb_chkAll">
                     <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">

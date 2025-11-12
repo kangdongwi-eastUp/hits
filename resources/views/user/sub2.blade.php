@@ -139,6 +139,16 @@
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="기타보양(바닥,벽)" id="">기타보양(바닥,벽)</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="관리사무소 규정 확인후 시공해주세요." id="">관리사무소 규정 확인후 시공해주세요.</label>
             </div>
+            <h4>다른 서비스도 이용할 예정이신가요?</h4>
+            <div class="bx_chks">
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="입주민 동의서" id="">입주민 동의서</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="행위허가" id="">행위허가</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="보양탈거" id="">보양탈거</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="사용검사" id="">사용검사</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="방충망 시공" id="">방충망 시공</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="종합청소" id="">종합청소</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="폐기물 수거" id="">폐기물 수거</label>
+            </div>
             <div id="page_sub1">
                 <label class="lb_chk lb_chkAll">
                     <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">

@@ -40,6 +40,11 @@
             {{ $board->option4 === 'y' ? '네, 할일태산에서 행위허가 했어요.' : '아니오, 타사에서 진행했습니다.' }}
         </h5>
 
+        <h4>다른 서비스도 이용할 예정이신가요?</h4>
+        <h5>
+            {{ $other_service_options }}
+        </h5>
+
         <i style="height: 29px;"></i>
 
         <label class="lb_chk"><input type="checkbox" name="" id="" class="required"><p>현장 주소를 재차 확인하였습니다.<span class="t_red">*</span></p></label>

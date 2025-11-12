@@ -159,6 +159,15 @@
             <div class="wrap_input">
                 <textarea name="contents2" id="" cols="30" rows="10" placeholder="예)발코니 확장,비내력벽철거,가벽신설"></textarea>
             </div>
+            <h4>다른 서비스도 이용할 예정이신가요?</h4>
+            <div class="bx_chks">
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="승강기 보양" id="">승강기 보양</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="보양탈거" id="">보양탈거</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="사용검사" id="">사용검사</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="방충망 시공" id="">방충망 시공</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="종합청소" id="">종합청소</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="폐기물 수거" id="">폐기물 수거</label>
+            </div>
             <div id="page_sub1">
                 <label class="lb_chk lb_chkAll">
                     <input type="checkbox" name="q_third_all" id="q_third_all" onclick="chkAll(this)">

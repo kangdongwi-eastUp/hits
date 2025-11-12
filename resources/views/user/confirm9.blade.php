@@ -54,6 +54,11 @@
         <h4>허가받을 공사 내용을 간략하게 작성해주세요.</h4>
         <h5>{!! nl2br($board->contents) !!}</h5>
 
+        <h4>다른 서비스도 이용할 예정이신가요?</h4>
+        <h5>
+            {{ $other_service_options }}
+        </h5>
+
         <i style="height: 29px;"></i>
 
         <label class="lb_chk"><input type="checkbox" name="" id="" class="required">

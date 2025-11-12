@@ -71,6 +71,11 @@
                     <p class="row01 {{ $result[11] === 'y' ? 'new' : '' }}">종합청소</p>
                     <button type="button" onclick="location.href='/adm/boards/11'"><img src="/public/img/admin/category_ico_page.svg" alt="페이지 아이콘"></button>
                 </li>
+                <!-- 2025.11.07 강동위 추가 - 폐기물 수거 서비스 추가 -->
+                <li>
+                    <p class="row01 {{ $result[12] === 'y' ? 'new' : '' }}">폐기물 수거</p>
+                    <button type="button" onclick="location.href='/adm/boards/12'"><img src="/public/img/admin/category_ico_page.svg" alt="페이지 아이콘"></button>
+                </li>
             </ul>
         </div>
     </main>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Board;
 use App\Models\Option;
 use App\Models\mang_option;
+use App\Models\other_service_option;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,7 @@ class BoardController extends Controller
   // index
   public function index() {
     // 2025.10.15 강동위 수정 - 방충망 시공, 종합청소 서비스 추가
-    for ($i=1; $i<=11; $i++) {
+    for ($i=1; $i<=12; $i++) {
       $rows = Board::where('type',$i)
         ->where('tmp','n')
         ->where('delete_status','n')
@@ -34,7 +35,8 @@ class BoardController extends Controller
   public function list (Request $request) {
     $type = $request->type;
     // 2025.10.15 강동위 수정 - 방충망 시공, 종합청소 서비스 추가
-    $arr = ['1','2','3','4','5','6','7','8','9', '10', '11'];
+    // 2025.11.07 강동위 수정 - 폐기물수거 서비스 추가 '12'
+    $arr = ['1','2','3','4','5','6','7','8','9', '10', '11', '12'];
 
     if (!in_array($type,$arr,true)) {
       return redirect()->back();
@@ -185,9 +187,20 @@ class BoardController extends Controller
       }
       $mang_options = implode(',',$mang_options);
     }
+    
+    // 2025.11.07 강동위 수정 - 다른 서비스 옵션 리스트 추가
+    $rows3 = other_service_option::where('board_id',$board->board_id)->get();
+    if ($rows3->count() === 0) {
+      $other_service_options = null;
+    } else {
+      foreach ($rows3 as $row3) {
+        $other_service_options[] = $row3->contents;
+      }
+      $other_service_options = implode(',',$other_service_options);
+    }
 
     $view = 'admin.category_detail_content'.$board->type;
-    return view($view, compact('board','options', 'mang_options'));
+    return view($view, compact('board','options', 'mang_options', 'other_service_options'));
   }
 
 }

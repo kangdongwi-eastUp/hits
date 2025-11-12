@@ -47,6 +47,11 @@
             {{ $mang_options }}
         </h5>
 
+        <h4>다른 서비스도 이용할 예정이신가요?</h4>
+        <h5>
+            {{ $other_service_options }}
+        </h5>
+
         <i style="height: 29px;"></i>
 
         <label class="lb_chk"><input type="checkbox" name="" id="" class="required">

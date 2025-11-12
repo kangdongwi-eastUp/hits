@@ -96,7 +96,7 @@
     </script>
 </head>
 
-<body id="page_sub9"><input type="hidden" id="input_page" value="">
+<body id="page_sub11"><input type="hidden" id="input_page" value="">
     <main>
         <h3>종합청소</h3>
         <form id="form" class="bx_form">
@@ -135,6 +135,16 @@
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="다중이용 공간" id="">다중이용 공간</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="대,중,소형 시설물" id="">대,중,소형 시설물</label>
                 <label class="lb_chk"><input type="checkbox" name="boyang[]" value="상담후 선택하고 싶어요." id="">상담후 선택하고 싶어요.</label>
+            </div>
+            <h4>다른 서비스도 이용할 예정이신가요?</h4>
+            <div class="bx_chks">
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="입주민 동의서" id="">입주민 동의서</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="승강기 보양" id="">승강기 보양</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="행위허가" id="">행위허가</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="보양탈거" id="">보양탈거</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="사용검사" id="">사용검사</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="방충망 시공" id="">방충망 시공</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="폐기물 수거" id="">폐기물 수거</label>
             </div>
             <div id="page_sub1">
                 <label class="lb_chk lb_chkAll">

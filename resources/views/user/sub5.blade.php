@@ -121,7 +121,17 @@
             </div>
 
             <h4>*보양탈거는 신청한 날로부터 당일 또는 익일 중 순회하며 탈거가 이루어집니다.</h4>
-
+            
+            <h4>다른 서비스도 이용할 예정이신가요?</h4>
+            <div class="bx_chks">
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="입주민 동의서" id="">입주민 동의서</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="승강기 보양" id="">승강기 보양</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="행위허가" id="">행위허가</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="사용검사" id="">사용검사</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="방충망 시공" id="">방충망 시공</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="종합청소" id="">종합청소</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="폐기물 수거" id="">폐기물 수거</label>
+            </div>
             <i style="height: 16px;"></i>
 
             <div id="page_sub1">

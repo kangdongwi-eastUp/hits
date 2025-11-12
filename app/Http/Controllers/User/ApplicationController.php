@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Controller;
 use App\Models\mang_option;
+use App\Models\other_service_option;
 use App\Models\Board;
 use App\Models\Option;
 use Illuminate\Http\Request;
@@ -86,8 +87,10 @@ class ApplicationController extends Controller
         return view('user.sub5');
       } else if ($request->input('q_second') === '6') {  // 방충망 시공
         return view('user.sub10');
-      } else {  // 종합 청소
+      } else if ($request->input('q_second') === '7') {  // 종합 청소
         return view('user.sub11');
+      } else {                // 폐기물 수거
+        return view('user.sub12');
       }
     }
   }
@@ -98,7 +101,7 @@ class ApplicationController extends Controller
     $validator = Validator::make(
       $request->all(),
       [
-        'type' => 'required|integer|max:11'   // 2025.10.12 강동위 수정 - 방충망 시공, 종합 청소 서비스 추가로 인한 max값 11로 수정
+        'type' => 'required|integer|max:12'   // 2025.10.12 강동위 수정 - 방충망 시공, 종합 청소 서비스 추가로 인한 max값 12로 수정
       ]
     );
 
@@ -142,6 +145,9 @@ class ApplicationController extends Controller
     }
     if ($request->input('type') === '11') {
       $result = $this->type11($request);
+    }
+    if ($request->input('type') === '12') {
+      $result = $this->type12($request);
     }
 
     return response()->json($result);
@@ -192,6 +198,17 @@ class ApplicationController extends Controller
         'type' => 1
       ]);
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
     } catch (\Exception $e) {
       $result = ['result' => 'fail', 'message' => $e->getMessage()];
@@ -236,6 +253,17 @@ class ApplicationController extends Controller
         ]);
       }
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
       DB::commit();
     } catch (\Exception $e) {
@@ -276,6 +304,17 @@ class ApplicationController extends Controller
         'type' => 3
       ]);
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
     } catch (\Exception $e) {
       $result = ['result' => 'fail', 'message' => $e->getMessage()];
@@ -295,6 +334,11 @@ class ApplicationController extends Controller
       $terms4 = 'y';
     }
 
+    $option1 = null;
+    if ($req->option1) {
+      $option1 = 'y';
+    }
+
     try {
       $board = Board::create([
         'start_date' => $req->start_date,
@@ -305,6 +349,7 @@ class ApplicationController extends Controller
         'company_name' => $req->company_name,
         'company_phone' => $req->company_phone,
         'created_at' => now(),
+        'option1' => $option1,
         'option4' => $req->option4,
         'terms1' => 'y',
         'terms2' => 'y',
@@ -312,6 +357,17 @@ class ApplicationController extends Controller
         'terms4' => $terms4,
         'type' => 4
       ]);
+
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
 
       $result = ['result' => 'success', 'data' => $board];
     } catch (\Exception $e) {
@@ -354,6 +410,17 @@ class ApplicationController extends Controller
           'board_id' => $board->board_id,
           'contents' => $boyang
         ]);
+      }
+
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
       }
 
       $result = ['result' => 'success', 'data' => $board];
@@ -417,6 +484,18 @@ class ApplicationController extends Controller
           'contents' => $boyang
         ]);
       }
+
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
       DB::commit();
     } catch (\Exception $e) {
@@ -480,6 +559,17 @@ class ApplicationController extends Controller
         ]);
       }
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
       DB::commit();
     } catch (\Exception $e) {
@@ -536,6 +626,17 @@ class ApplicationController extends Controller
         'contents2' => $req->contents2,
       ]);
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
     } catch (\Exception $e) {
       $result = ['result' => 'fail', 'message' => $e->getMessage()];
@@ -582,6 +683,17 @@ class ApplicationController extends Controller
           'board_id' => $board->board_id,
           'contents' => $boyang
         ]);
+      }
+
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
       }
 
       $result = ['result' => 'success', 'data' => $board];
@@ -647,6 +759,17 @@ class ApplicationController extends Controller
         ]);
       }
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
       DB::commit();
     } catch (\Exception $e) {
@@ -699,6 +822,74 @@ class ApplicationController extends Controller
         ]);
       }
 
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
+      $result = ['result' => 'success', 'data' => $board];
+      DB::commit();
+    } catch (\Exception $e) {
+      $result = ['result' => 'fail', 'message' => $e->getMessage()];
+      DB::rollBack();
+    }
+    return $result;
+  }
+  // type 12 store
+  public function type12($req)
+  {
+    DB::beginTransaction();
+    try {
+
+      if ($req->terms3 === 'on') {
+        $terms = 'y';
+      } else {
+        $terms = 'n';
+      }
+
+      $board = Board::create([
+        'start_date' => $req->start_date,           // 수거 희망일
+        'address1' => $req->address1,               // 현장주소1
+        'address2' => $req->address2,               // 현장주소2
+        'name' => $req->name,                       // 신청인명
+        'phone' => $req->phone,                     // 신청인 연락처
+        'company_name' => $req->company_name,       // 업체명
+        'company_phone' => $req->company_phone,     // 업체 연락처  
+        'contents' => $req->contents,               // 참조사항
+        'created_at' => now(),                      // 등록일자
+        'terms1' => 'y',                            // 개인정보 수집 및 동의여부
+        'terms2' => 'y',                            // 개인정보 제3자 제공 동의 여부
+        'terms3' => $terms,                         // 마케팅 활용정보 동의
+        'type' => 12                                // type 폐기물수거
+
+      ]);
+
+      // 수거할 예상 폐기물량 ( 기존 보양 테이블에 저장함 )
+      $boyangs = $req->boyang;
+      foreach ($boyangs as $boyang) {
+        Option::create([
+          'board_id' => $board->board_id,
+          'contents' => $boyang
+        ]);
+      }
+
+      // 2025.10.28 강동위 수정 - 다른서비스 이용 조회 추가
+      if (!empty($req->other_service_option)) {
+          $other_service_options = $req->other_service_option;
+          foreach ($other_service_options as $other_service_option) {
+              other_service_option::create([
+                  'board_id' => $board->board_id,
+                  'contents' => $other_service_option
+              ]);
+          }
+      }
+
       $result = ['result' => 'success', 'data' => $board];
       DB::commit();
     } catch (\Exception $e) {
@@ -737,6 +928,18 @@ class ApplicationController extends Controller
       $mang_options = implode(',', $mang_options);
     }
 
-    return view('user.confirm' . $board->type, compact('board', 'options', 'mang_options'));
+    // 2025.11.07 강동위 수정 - 다른서비스 이용 옵션 조회 추가 other_service_option
+    $other_service_option_rows = other_service_option::where('board_id', $board->board_id)->get();
+
+    if ($other_service_option_rows->count() === 0) {
+      $other_service_options = null;
+    } else {
+      foreach ($other_service_option_rows as $other_service_option_row) {
+        $other_service_options[] = $other_service_option_row->contents;
+      }
+      $other_service_options = implode(',', $other_service_options);
+    }
+
+    return view('user.confirm' . $board->type, compact('board', 'options', 'mang_options', 'other_service_options'));
   }
 }

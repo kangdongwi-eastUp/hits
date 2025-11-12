@@ -59,7 +59,7 @@
                             $('input[type="checkbox"]').prop('disabled', false);
                         }
                     }
-                } else if (['four-service', 'five-service', 'six-service', 'seven-service'].includes(clickedId)) {
+                } else if (['four-service', 'five-service', 'six-service', 'seven-service', 'eight-service'].includes(clickedId)) {
                     // 2025.10.12 강동위 추가 - 방충망 시공, 종합청소 신청서 추가
                     if ($('input[name="first_service"]').is(':checked') || $('input[name="second_service"]').is(':checked') || $('input[name="third_service"]').is(':checked')) {
                         e.preventDefault();
@@ -148,6 +148,11 @@
                 <img src="/public/img/user/main_lk_ico7.webp" alt="청소 아이콘">
                 종합 청소
                 <input type="checkbox" name="q_second" id="seven-service" value="7" hidden><i></i>
+            </label>
+            <label for="eight-service">
+                <img src="/public/img/user/main_lk_ico8.webp" alt="폐기물수거 아이콘">
+                폐기물 수거
+                <input type="checkbox" name="q_second" id="eight-service" value="8" hidden><i></i>
             </label>
 
         </form>

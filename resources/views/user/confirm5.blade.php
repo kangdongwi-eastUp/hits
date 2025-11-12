@@ -30,10 +30,15 @@
         <h5>{{ $board->name }}<br>{{ $board->phone }}</h5>
 
         <h4>신청인이 업체이시면 업체명을 작성해주세요.</h4>
-        <h5>{{ $board->option1 === 'y' ? '셀프 직영 공사 입니다.' : $board->company_name }}</h5>
+        <h5>{{ $board->option4 === 'y' ? '셀프 직영 공사 입니다.' : $board->company_name }}</h5>
 
         <h4>탈거할 보양을 선택해주세요. <span class="t_red">*</span></h4>
         <h5>{{ $options }}</h5>
+
+        <h4>다른 서비스도 이용할 예정이신가요?</h4>
+        <h5>
+            {{ $other_service_options }}
+        </h5>
         
         <i style="height: 29px;"></i>
 

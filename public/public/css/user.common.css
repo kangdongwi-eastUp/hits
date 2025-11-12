@@ -146,7 +146,9 @@ span.t_red{ display: inline;}
 }
 @media screen and (max-width: 1440px){
     html, body{ zoom: 0.9}
-    .fnb, main{ left: 11.0989% }
+    /* 기존: .fnb, main{ left: 11.0989% } */
+    /* 2025.11.06 강동위 수정 - 브라우저 크기 변경 시 메인화면 위치가 변경되어 중앙정렬되도록 수정 */
+    /*.fnb, main{ left: 50%; transform: translateX(-50%); } */
 
     /* === bg_body === */
     .bg_body, .bg_body span{ padding-left: calc( 11.0989% + 560px + 35px); padding-right: 35px;}
@@ -155,7 +157,9 @@ span.t_red{ display: inline;}
     main{ min-height: 123.525vh; }
 }
 @media screen and (max-width: 1176px){
-    .fnb, main{ left: 0;  }
+    /* 기존: .fnb, main{ left: 0; } */
+    /* 2025.11.06 강동위 수정 - 브라우저 크기 변경 시 메인화면 위치가 변경되어 중앙정렬되도록 수정 */
+    .fnb, main{ left: 50%; transform: translateX(-50%); }
 
     /* === bg_body === */
     .bg_body, .bg_body span{ padding-left: calc(560px + 35px); }
@@ -164,7 +168,9 @@ span.t_red{ display: inline;}
 @media screen and (max-width: 1024px){
     *{ font-size: 12px; }
     html, body{ zoom: 1; }
-    .fnb, main{ left: 0; }
+    /* 기존: .fnb, main{ left: 0; } */
+    /* 2025.11.06 강동위 수정 - 브라우저 크기 변경 시 메인화면 위치가 변경되어 중앙정렬되도록 수정 */
+    .fnb, main{ left: 50%; transform: translateX(-50%); }
 
     /* === main === */
     main{ min-height: 100vh; }

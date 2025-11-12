@@ -53,6 +53,9 @@
   if ($type === '11') {
     $title = '종합청소';
   }
+  if ($type === '12') {
+    $title = '폐기물 수거';
+  }
 @endphp
 <main class="minWidth2">
   <h2>{{ $title }}</h2>

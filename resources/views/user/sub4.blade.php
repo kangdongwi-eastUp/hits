@@ -126,8 +126,8 @@
             <h4>신청인이 업체이시면 업체명을 작성해주세요.</h4>
             <h5>업체 등록 후 멤버쉽 전용 단가로 이용이 가능하게 됩니다. 차후 채팅으로 안내해 드릴게요.</h5>
             <div class="wrap_input">
-                <label class="lb_chk"><input type="checkbox" name="company_name" id="">셀프 직영 공사입니다</label>
-                <input type="text" placeholder="업체명을 입력해주세요." name="company_phone">
+                <label class="lb_chk"><input type="checkbox" name="option1" id="" onclick="disabledCompanyName(this)">셀프 직영 공사입니다</label>
+                <input type="text" placeholder="업체명을 입력해주세요." name="company_name">
             </div>
 
             <h4>당사에서 행위허가를 진행한 현장인가요?</h4>
@@ -139,6 +139,16 @@
             <h4>신청접수가 완료되면 방화판,방화유리,갑종방화문에 관한 전문 상담이 이루어집니다.</h4>
             <div class="wrap_input">
                 <label class="lb_chk"><input type="checkbox" name="terms4" id="" value="y">네, 확인하였습니다.</label>
+            </div>
+            <h4>다른 서비스도 이용할 예정이신가요?</h4>
+            <div class="bx_chks">
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="입주민 동의서" id="">입주민 동의서</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="승강기 보양" id="">승강기 보양</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="행위허가" id="">행위허가</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="보양탈거" id="">보양탈거</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="방충망 시공" id="">방충망 시공</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="종합청소" id="">종합청소</label>
+                <label class="lb_chk"><input type="checkbox" name="other_service_option[]" value="폐기물 수거" id="">폐기물 수거</label>
             </div>
             <div id="page_sub1">
                 <label class="lb_chk lb_chkAll">

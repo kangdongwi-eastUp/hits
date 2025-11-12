@@ -33,6 +33,9 @@
             <h3>탈거할 보양을 선택해주세요.</h3>
             <h4>{{ $options }}</h4>
 
+            <h3> 다른 서비스도 이용할 예정일까요?</h3>
+            <h4>{{ $other_service_options }}</h4>
+
             <i style="height: 38px;"></i>
             <button type="button" class="btn_back" onclick="location.href='/adm/boards/{{ $board->type }}'">뒤로가기</button>
         </div>
