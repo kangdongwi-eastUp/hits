@@ -41,11 +41,6 @@
         <h5>
             {{ $options }}
         </h5>
-
-        <h4>수거할 예상 폐기물량을 선택해 주세요.<span class="t_red">*</span></h4>
-        <h5>
-            {{ $options }}
-        </h5>
         <h4>참고할 사항이 있다면 작성 해주세요.</h4>
         <h5>{!! nl2br($board->contents) !!}</h5>
         
