@@ -79,13 +79,16 @@
                     let checkedLength = $('.bx_links input:checked').length;
 
                     if (checkedLength == 0) {
-                        $('.btn_submit').attr('data-value', '').removeClass('active');
+                        $('.btn_submit').removeClass('active');
                     } else {
-                        $('.btn_submit').attr('data-value', checkedLength).addClass('active');
+                        $('.btn_submit').addClass('active');
                         // 2025.10.12 강동위 추가 - 서비스 추가로 인한 신청하기 버튼이 잘 안보여서 하단 스크롤 기능 추가
-                        $('html, body').animate({
-                            scrollTop: $(document).height()
-                        }, 300);
+                        
+                        if (['four-service', 'five-service', 'six-service', 'seven-service', 'eight-service'].includes(clickedId)) {
+                            $('html, body').animate({
+                                scrollTop: $(document).height()
+                            }, 300);
+                        }
                     }
                 }, 0);
             });
@@ -114,6 +117,7 @@
             <div class="swiper-pagination"></div>
         </div>
         <form class="bx_links" id="form" action="{{ route('user.application.write') }}">
+            <div class="service-group-title" style="grid-column: 1 / -1; font-weight: bold; text-align: left; padding: 15px 0 5px; border-bottom: 1px solid #ccc; margin-bottom: 5px;">중복선택 가능 서비스</div>
             <label for="first-service">
                 <img src="/public/img/user/main_lk_ico1.webp" alt="입주민 동의 아이콘">
                 입주민 동의서
@@ -129,6 +133,7 @@
                 행위허가
                 <input type="checkbox" name="third_service" class="q_first" id="third-service" value="3" hidden><i></i>
             </label>
+            <div class="service-group-title" style="grid-column: 1 / -1; font-weight: bold; text-align: left; padding: 15px 0 5px; border-bottom: 1px solid #ccc; margin-bottom: 5px; margin-top: 20px;">단일선택 서비스</div>
             <label for="five-service">
                 <img src="/public/img/user/main_lk_ico4.webp" alt="보양 아이콘">
                 보양 탈거

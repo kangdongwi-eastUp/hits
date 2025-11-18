@@ -101,22 +101,22 @@
             <h4>공사 기간을 입력해주세요. <span class="t_red">*</span></h4>
             <h5>확정되지 않은 경우 예상일 또는 희망일을 입력해주세요.</h5>
             <div class="wrap_input wrap_date">
-                <input type="date" id="start_date" name="start_date" class="input_dateFrom datepicker" max="9999-12-31">
+                <input type="date" id="start_date" name="start_date" class="input_dateFrom datepicker" max="9999-12-31" placeholder="시작일을 선택해 주세요.">
                 부터&ensp;
-                <input type="date" id="end_date" name="end_date" class="input_dateTo datepicker" max="9999-12-31">
+                <input type="date" id="end_date" name="end_date" class="input_dateTo datepicker" max="9999-12-31" placeholder="종료일을 선택해 주세요.">
             </div>
 
             <h4>현장 주소를 입력해주세요. <span class="t_red">*</span></h4>
             <h5 class="t_dRed">주소를 꼭! 정확하게 입력해 주세요.</h5>
             <div class="wrap_input">
                 <input type="text" id="address0" name="address1" onclick="postCode()" class="input_map" placeholder="주소를 입력해주세요.">
-                <input type="text" id="address1" name="address2" placeholder="상세주소를 입력해주세요">
+                <input type="text" id="address1" name="address2" placeholder="000동 0000호">
             </div>
 
             <h4>신청인명과 연락처를 입력해주세요. <span class="t_red">*</span></h4>
             <div class="wrap_input">
                 <input type="text" id="name" name="name" class="input_name" placeholder="성명">
-                <input type="text" id="phone" name="phone" maxlength="13" oninput="phoneValidation(this)" placeholder="연락처는 숫자만 입력해주세요">
+                <input type="text" id="phone" name="phone" maxlength="13" oninput="phoneValidation(this)" placeholder="-없이 숫자만 입력해주세요">
             </div>
 
             <h4>신청인이 업체이시면 업체명을 작성해주세요.</h4>
@@ -133,7 +133,7 @@
             <div class="wrap_input">
                 <label class="lb_chk"><input type="checkbox" name="" id="" onclick="getUser(1,this)">위 신청인과 같아요.</label>
                 <input type="text" name="manager_name" id="" class="input_name" placeholder="성명">
-                <input type="text" name="manager_phone" id="" maxlength="13" oninput="phoneValidation(this)" placeholder="연락처는 숫자만 입력해주세요">
+                <input type="text" name="manager_phone" id="" maxlength="13" oninput="phoneValidation(this)" placeholder="-없이 숫자만 입력해주세요">
             </div>
 
             <h4>공사내용을 간략하게 작성해주세요.</h4>
@@ -189,7 +189,7 @@
             </div>
             <div class="bx_btnBottom">
                 <button type="button" class="btn_confirm b_point" onclick="formSubmit()">접수하기</button>
-                <button type="button" class="btn_cancel b_secondary" onclick="location.href='{{ route('user.index') }}'">취소</button>
+                <button type="button" class="btn_cancel b_secondary" onclick="location.href='{{ route('user.index') }}'">뒤로</button>
             </div>
         </form>
     </main>
