@@ -117,7 +117,6 @@
             <div class="swiper-pagination"></div>
         </div>
         <form class="bx_links" id="form" action="{{ route('user.application.write') }}">
-            <div class="service-group-title" style="grid-column: 1 / -1; font-weight: bold; text-align: left; padding: 15px 0 5px; border-bottom: 1px solid #ccc; margin-bottom: 5px;">중복선택 가능 서비스</div>
             <label for="first-service">
                 <img src="/public/img/user/main_lk_ico1.webp" alt="입주민 동의 아이콘">
                 입주민 동의서
@@ -133,7 +132,6 @@
                 행위허가
                 <input type="checkbox" name="third_service" class="q_first" id="third-service" value="3" hidden><i></i>
             </label>
-            <div class="service-group-title" style="grid-column: 1 / -1; font-weight: bold; text-align: left; padding: 15px 0 5px; border-bottom: 1px solid #ccc; margin-bottom: 5px; margin-top: 20px;">단일선택 서비스</div>
             <label for="five-service">
                 <img src="/public/img/user/main_lk_ico4.webp" alt="보양 아이콘">
                 보양 탈거
